@@ -1,0 +1,45 @@
+class Use():
+        def __init__(self,a,b,c):
+                self.a=a
+                self.b=b
+                self.c=c
+                print('work')
+        def asks(self):
+                global a,b,c,d,e,f,g,b1,b2,b3
+                a=input('Название странички: ')
+                b=input('Заголовок 1:  ')
+                b1=input('Заголовок 2:  ')
+                b2=input('Заголовок 3:  ')
+                b3=input('Заголовок1 4:  ')
+                c=input('Жирный заголовок')
+                d=input('Дайте ссылку')
+                e=input('Ссылка на картинку: ')
+                f=input('Название MP3:')
+                g=input('Подчеркнутый текст')
+class Creator():
+        def __init__(self,name):
+                self.name=name
+                print('создаю')
+                global head
+                zagolovok='<h1>'+b+'</h1><br>'
+                zagolovok1='<h2>'+b1+'</h2><br>'
+                zagolovok2='<h3>'+b2+'</h3><br>'
+                zagolovok3='<h4>'+b3+'</h4><br>'
+                zagolovokZ='<strong>'+c+'</strong><br>'
+                link='<a href=\"'+d+'\" target = "_blank">'+'link'+'</a><br>'
+                image='<img src=\"'+e+'\"'+'width=\"100\" height=\"100\"><br>'
+                music=' <audio src=\"'+f+'\" controls> </audio><br>'
+                underlined__text='<ins>'+g+' </ins)<br>'
+                
+                head=' <head>\n'+'  '+'<title>'+str(a)+'</title>'+'\n'+' </head>\n'+' <body>\n'+'  '+zagolovok+'\n'+zagolovok1+'\n'+zagolovok2+'\n'+zagolovok3+'\n'+zagolovokZ+'\n'+link+'\n'+image+'\n'+music+'\n'+underlined__text+'\n'+'\n </body>'
+        def creat_file(self):
+                global a,b
+                self.name=open('namename .html','w')
+                self.name.write( "<!DOCTYPE html>\n<html>\n"+head+"\n</html>\n")
+                self.name.close()
+
+
+user=Use(1,2,3)
+user.asks()
+creator=Creator('sssss')
+creator.creat_file()
